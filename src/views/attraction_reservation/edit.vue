@@ -413,7 +413,19 @@
             </div>
             <!-- 文本 -->
             <div class="display_div">
-              <div v-for="(item, index) in timeObj" :key="index" :style="{'background': activeIndex === index ? '#58b7f2':item.syrs > 0?'#eaf7ff':'#f2f2f2'}" @click="changeBack(index)">
+              <div
+                v-for="(item, index) in timeObj"
+                :key="index"
+                :style="{
+                  background:
+                    activeIndex === index
+                      ? '#58b7f2'
+                      : item.syrs > 0
+                      ? '#eaf7ff'
+                      : '#f2f2f2',
+                }"
+                @click="changeBack(index, item.syrs)"
+              >
                 <div>时间{{ item.timeSlot }}</div>
                 <div>剩余人数{{ item.syrs }}</div>
               </div>
@@ -507,7 +519,7 @@ export default {
         attraction_reservation_id: 0,
         timeObj: {},
       },
-      activeIndex:'',
+      activeIndex: "",
       // 表单字段
       form: {
         attraction_name: "", // 景点名称
@@ -671,7 +683,9 @@ export default {
     },
 
     handleChange(data) {
-      this.form["appointment_time"] = this.$dayJs(data).format("YYYY-MM-DD HH:mm:ss");
+      this.form["appointment_time"] = this.$dayJs(data).format(
+        "YYYY-MM-DD HH:mm:ss"
+      );
     },
 
     /**
@@ -729,8 +743,12 @@ export default {
       $.db.del("form");
       return param;
     },
-    changeBack(index){
-this.activeIndex = index
+    changeBack(index, syrs) {
+      if (syrs === 0) {
+        this.$message('预约人数已达上限')
+        return false
+      }
+      this.activeIndex = index;
     },
     /**
      * 获取对象后获取缓存表单
@@ -759,11 +777,11 @@ this.activeIndex = index
   computed: {
     timeObj() {
       if (this.form["time_obj"]) {
-        const arr = JSON.parse(this.form.time_obj).timeSlots
-        arr.forEach(element => {
-          element.syrs = element.maxPeople - Math.floor(Math.random() * (element.maxPeople - 1)) + 1;
+        const arr = JSON.parse(this.form.time_obj).timeSlots;
+        arr.forEach((element) => {
+          element.syrs = element.maxPeople - Math.floor(Math.random() * (element.maxPeople - 1)) + 1;;
         });
-        return arr
+        return arr;
       }
     },
   },
