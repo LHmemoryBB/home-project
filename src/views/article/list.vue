@@ -325,5 +325,10 @@
         margin-left: 5px;
     }
 
+    .iudis_box{
+        display: flex;
+        align-items: center;
+    }
+
 
 </style>

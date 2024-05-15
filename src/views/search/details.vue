@@ -125,6 +125,9 @@ export default {
 .card_search {
   text-align: center;
 }
+.card_result_search{
+  margin-top: 200px;
+}
 .card_result_search > .title {
   text-align: center;
   padding: 10px 0;

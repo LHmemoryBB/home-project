@@ -2741,7 +2741,7 @@ table .reverse .title {
 .pager .active,
 [class*=mm_pager_] .active {
 	background: #38f;
-	color: #fff;
+	color: #000000;
 	border-color: #38f;
 }
 
@@ -6615,7 +6615,7 @@ margin-left: 1%;
 #app .diy_list .diy_list_page_box .col .warp .container .row div .page-item.active .page-link {
   background:#a2c0a8 !important;
   border-color:#a2c0a8 !important;
-  color: #fff !important;
+  color: #000000 !important;
 }
 
 /* *********************元素样式************************** */

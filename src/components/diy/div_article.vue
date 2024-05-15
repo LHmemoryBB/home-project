@@ -1,6 +1,7 @@
 <template>
     <div class="div_article">
         <div class="title">{{ obj[vm.title] }}</div>
+        <div class="title">作者：{{ obj[vm.author] }}</div>
         <div class="aside list">
             <div class="aside_2 col-12 col-sm-6">
                 <div class="aside_row">
@@ -69,6 +70,7 @@
                         create_time: "create_time",
                         hits: "hits",
                         praise_len: "praise_len",
+                        author: "author"
                     };
                 },
             },
@@ -87,6 +89,7 @@
              */
             get_praise() {
                 var user_id = this.$store.state.user.user_id;
+                console.log(this.obj[this.vm.description],this.vm.description, 'description');
                 console.log(this.obj.article_id)
                 this.$get("~/api/praise/count?", {
                     source_table: "article",

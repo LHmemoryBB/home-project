@@ -641,7 +641,9 @@ export default {
 			var _this = this;
 			this.$get(this.toUrl(query, url), null, function(json, status) {
 				_this.events("get_obj_after", json, func);
+				
 				var res = json.result;
+				console.log(res, 'dasdasdsadsadass');
 				if (res) {
 					var obj;
 					if (res.obj) {
@@ -666,6 +668,7 @@ export default {
 						if (!_this.form || Object.keys(_this.form).length === 0) {
 						    _this.form = Object.assign({}, _this.obj)
 							var form = $.db.get("form");
+							console.log(_this.form, '2131231231231');
 							if(Object.keys(_this.form).length > 0){
 								$.push(_this.form, form);
 							}
@@ -749,8 +752,10 @@ export default {
 		 * @param {Boolean} bl 是否重置再搜索
 		 */
 		search: function search(query, func) {
+			console.log(query, func);
 			if (query) {
 				$.push(this.query, query);
+				console.log(this.query);
 			}
 			var url = this.url_get_list ? this.url_get_list : this.url;
 			if (url) {
@@ -1528,6 +1533,7 @@ export default {
 		 * @param {Object} key
 		 */
 		to_form(url,key){
+			console.log(this.obj, '2131231231231');
 			$.db.set("form",this.obj);
 			this.$router.push(url);
 		},

@@ -157,11 +157,11 @@
 							name: "food_address",
 							type: "文本"
 						},
-						{
-							title: "美食标签",
-							name: "food_labels",
-							type: "文本"
-						},
+						// {
+						// 	title: "美食标签",
+						// 	name: "food_labels",
+						// 	type: "文本"
+						// },
 				],
 				richList: [
 						{

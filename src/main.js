@@ -9,6 +9,10 @@ import 'swiper/dist/css/swiper.min.css'
 import 'swiper/dist/js/swiper.min'
 /*  引入element 样式 */
 import 'element-ui/lib/theme-chalk/index.css'
+import dayjs from 'dayjs'
+
+
+Vue.prototype.$dayJs = dayjs
 Vue.config.productionTip = false
 Vue.use(plugins).use(Element, {
   locale,

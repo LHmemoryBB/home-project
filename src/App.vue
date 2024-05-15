@@ -16,6 +16,7 @@
     .page-item.active .page-link {
         background-color: var(--color_primary) !important;
         border-color: var(--color_primary) !important;
+        color: #00000095 !important;
     }
 
     .btn-outline-primary {
