@@ -128,10 +128,11 @@ export default {
   },
   methods: {
     get_obj_after(json) {
+      
       // 判断是否获取到数据
-      console.log(json ,'判断是否获取导数据');
+      // console.log(json ,'判断是否获取导数据');
       if (json && json.result && json.result.obj) {
-        console.log(json.result.obj, 'get_obj_after');
+        // console.log(json.result.obj, 'get_obj_after');
         var obj = json.result.obj;
         this.obj = obj;
         // this.obj.time_obj = JSON.parse(this.obj.time_obj)
@@ -158,13 +159,13 @@ export default {
       };
 
       this.$get("~/api/collect/count?", query, (res) => {
-        console.log(res);
+        // console.log(res);
         if (res.result || res.result === 0) {
           var bl = res.result ? true : false;
           this.state_collect = bl;
-          console.log("收藏状态：" + bl);
+          // console.log("收藏状态：" + bl);
         } else if (res.error) {
-          console.error(res.error);
+          // console.error(res.error);
         }
       });
     },
@@ -196,7 +197,7 @@ export default {
             this.$toast("取消收藏");
           } else if (res.error) {
             this.$toast(res.error.message);
-            console.error(res.error);
+            // console.error(res.error);
           }
         });
       } else {
@@ -208,7 +209,7 @@ export default {
             this.$toast("收藏成功");
           } else if (res.error) {
             this.$toast(res.error.message);
-            console.error(res.error);
+            // console.error(res.error);
           }
         });
       }
@@ -230,10 +231,10 @@ export default {
         (res) => {
           if (res.result || res.result === 0) {
             this.praise = res.result;
-            console.log("点赞数：", res.result);
+            // console.log("点赞数：", res.result);
           } else if (res.error) {
             this.$toast(res.error.message);
-            console.error(res.error);
+            // console.error(res.error);
           }
         }
       );
@@ -249,10 +250,10 @@ export default {
         (res) => {
           if (res.result || res.result === 0) {
             this.state_praise = res.result ? true : false;
-            console.log("点赞状态：", res.result);
+            // console.log("点赞状态：", res.result);
           } else if (res.error) {
             this.$toast(res.error.message);
-            console.error(res.error);
+            // console.error(res.error);
           }
         }
       );
@@ -287,16 +288,16 @@ export default {
               },
               (res) => {
                 if (res.result) {
-                  console.log("添加点赞数状态：", res.result);
+                  // console.log("添加点赞数状态：", res.result);
                 } else if (res.error) {
-                  console.error(res.error);
+                  // console.error(res.error);
                 }
               }
             );
             this.$toast("取消点赞");
           } else if (res.error) {
             this.$toast(res.error.message);
-            console.error(res.error);
+            // console.error(res.error);
           }
         });
       } else {
@@ -312,16 +313,16 @@ export default {
               },
               (res) => {
                 if (res.result) {
-                  console.log("添加点赞数状态：", res.result);
+                  // console.log("添加点赞数状态：", res.result);
                 } else if (res.error) {
-                  console.error(res.error);
+                  // console.error(res.error);
                 }
               }
             );
             this.$toast("点赞成功");
           } else if (res.error) {
             this.$toast(res.error.message);
-            console.error(res.error);
+            // console.error(res.error);
           }
         });
       }

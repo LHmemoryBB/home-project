@@ -1,6 +1,6 @@
 module.exports = {
     devServer: {
-        port: 8081
+        port: 8082
     },
     publicPath: './',
     outputDir: 'dist', // build时构建文件的目录 构建时传入 --no-clean 可关闭该行为

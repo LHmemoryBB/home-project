@@ -48,6 +48,7 @@
               <el-date-picker
                 type="datetime"
                 placeholder="选择日期时间"
+                :picker-options="pickerOptions"
                 :disabled="disabledObj['consultation_time_isDisabled']"
                 id="form_consultation_time"
                 v-model="form['consultation_time']"
@@ -71,8 +72,8 @@
               <el-input
                 type="textarea"
                 id="form_reply_content"
-                v-model="form['reply_content']"
-                :disabled="disabledObj['reply_content_isDisabled']"
+                v-model="form['consultation_content']"
+                :disabled="disabledObj['consultation_content_isDisabled']"
               ></el-input>
               <!-- <el-input
                 type="textarea"
@@ -153,6 +154,28 @@ export default {
 
       // ID字段
       field: "online_service_id",
+      pickerOptions: {
+        disabledDate(time) {
+          // 获取当前时间
+          const now = new Date();
+
+          // 获取今天的时间
+          const today = new Date(
+            now.getFullYear(),
+            now.getMonth(),
+            now.getDate()
+          );
+
+          // 获取未来7天后的时间
+          const futureSevenDays = new Date();
+          futureSevenDays.setDate(now.getDate() + 7);
+
+          // 如果时间在今天之前或未来7天之后，则禁用
+          return (
+            time.getTime() < today.getTime()
+          );
+        }
+      },
     };
   },
   methods: {

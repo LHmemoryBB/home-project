@@ -234,7 +234,7 @@ export default {
 		del_show: function(o, id) {
 			var _this = this;
 			$.confirm('删除后将无法回复!<br/>是否确定要删除?', function() {
-				// console.log('确定删除!');
+				// // console.log('确定删除!');
 				var query = {};
 				query[id] = o[id];
 				_this.del(query, function() {
@@ -242,7 +242,7 @@ export default {
 					_this.count -= 1;
 				});
 			}, function() {
-				// console.log('取消删除!')
+				// // console.log('取消删除!')
 			})
 		},
 
@@ -330,7 +330,7 @@ export default {
 		 * @func {Function} 回调函数
 		 */
 		get_obj: function get_obj(param, func) {
-			// console.log("获取对象", param)
+			// // console.log("获取对象", param)
 			if (!param) {
 				param = this.query;
 			}
@@ -343,7 +343,7 @@ export default {
 				func();
 			}
 			else {
-				console.log(msg);
+				// console.log(msg);
 			}
 			return ret;
 		},
@@ -375,7 +375,7 @@ export default {
 			}
 
 			if (token) {
-				console.log("需要登录，并有登录凭证");
+				// console.log("需要登录，并有登录凭证");
 				this.$get_user((user) => {
 					this.user = user;
 					this.user_group = user.user_group;
@@ -386,7 +386,7 @@ export default {
 					}
 
 					this.$get_auth(user_group);
-					console.log("token" ,token ,"user_group" ,user_group);
+					// console.log("token" ,token ,"user_group" ,user_group);
 					this.user.token = token;
 					if (this.oauth.signIn) {
 						if (this.user.token) {
@@ -405,7 +405,7 @@ export default {
 					}
 				});
 			} else if (this.oauth.signIn) {
-				console.log("需要登录，并未登录");
+				// console.log("需要登录，并未登录");
 				this.$get_auth("游客");
 				if (this.user.token) {
 					if(func){
@@ -417,7 +417,7 @@ export default {
 					})
 				}
 			} else {
-				console.log("不需要登录");
+				// console.log("不需要登录");
 				this.$get_auth("游客");
 				if(func){
 					func();
@@ -633,7 +633,7 @@ export default {
 		 * @param {Function} func 回调函数
 		 */
 		get_obj_main: function get_obj_main(query, func) {
-			// console.log("get_obj_main");
+			// // console.log("get_obj_main");
 			var url = this.url_get_obj ? this.url_get_obj : this.url + "method=get_obj";
 			if (!url) {
 				return;
@@ -643,7 +643,7 @@ export default {
 				_this.events("get_obj_after", json, func);
 				
 				var res = json.result;
-				console.log(res, 'dasdasdsadsadass');
+				// console.log(res, 'dasdasdsadsadass');
 				if (res) {
 					var obj;
 					if (res.obj) {
@@ -668,7 +668,6 @@ export default {
 						if (!_this.form || Object.keys(_this.form).length === 0) {
 						    _this.form = Object.assign({}, _this.obj)
 							var form = $.db.get("form");
-							console.log(_this.form, '2131231231231');
 							if(Object.keys(_this.form).length > 0){
 								$.push(_this.form, form);
 							}
@@ -681,7 +680,7 @@ export default {
 						}
 					}
 				} else if (json.error) {
-					console.log(json.error.message);
+					// console.log(json.error.message);
 				} else {
 					// _this.$toast("服务器连接失败！", "danger");
 				}
@@ -728,7 +727,7 @@ export default {
 					_this.turnOff = true;
 					_this.events("get_list_after", json, func, url);
 				} else if (json.error) {
-					console.log(json.error.message);
+					// console.log(json.error.message);
 				} else {
 					_this.$toast("服务器连接失败！", "danger");
 				}
@@ -752,10 +751,10 @@ export default {
 		 * @param {Boolean} bl 是否重置再搜索
 		 */
 		search: function search(query, func) {
-			console.log(query, func);
+			// console.log(query, func);
 			if (query) {
 				$.push(this.query, query);
-				console.log(this.query);
+				// console.log(this.query);
 			}
 			var url = this.url_get_list ? this.url_get_list : this.url;
 			if (url) {
@@ -796,7 +795,7 @@ export default {
 		 * @param {Function} func 回调函数
 		 */
 		next: function next(query, func) {
-			// console.log("next");
+			// // console.log("next");
 			var _this = this;
 			_this.get_list(query, function(json, url) {
 				if (json.result) {
@@ -821,7 +820,7 @@ export default {
 		 * @param {Function} func 回调函数
 		 */
 		prev: function prev(query, func) {
-			// console.log("prev");
+			// // console.log("prev");
 			var _this = this;
 			this.get_list(query, function(json, url) {
 				if (json.result) {
@@ -892,10 +891,10 @@ export default {
 								})
 						}
 					} else {
-						console.error('error 关键条件缺失!!');
+						// console.error('error 关键条件缺失!!');
 					}
 				} else {
-					console.error('error 提交失败!!');
+					// console.error('error 提交失败!!');
 				}
 			});
 		},
@@ -905,13 +904,14 @@ export default {
 		 * @param {Object} func 返回函数
 		 */
 		submit: async function submit(param, func) {
-			// console.log('提交事件', param);
+			// console.log('提交事件', param, this.form);
 			if (!param) {
 				param = this.form;
 			}
 			// 提交前事件
-			var pm = this.events("submit_before", Object.assign({}, param)) || param;
+			var pm = this.events("submit_before", param);
 			// 提交前验证事件
+			// console.log(pm, '提交前验证事件');
 			var msg = await this.events("submit_check", pm);
 			var ret;
 			// 判断错误
@@ -919,6 +919,7 @@ export default {
 				this.$toast(msg, 'danger');
 			} else {
 				// 提交表单
+				// console.log(pm, '提交表单事件');
 				ret = this.events("submit_main", pm, func);
 			}
 			// 返回结果
@@ -937,15 +938,16 @@ export default {
 				try{
 					var value = param[key];
 					// 值判断与值校验
-					console.log("键 ,值 ,类型" ,key ,value ,value instanceof Date);
+					// console.log("键 ,值 ,类型" ,key ,value ,value instanceof Date);
 					if(value && value instanceof Date){
 						param[key] = this.$toTime(value ,"yyyy-MM-dd hh:mm:ss");
 					}
 				}
 				catch(err){
-					console.log(key ,"转日期错误：" ,err ,"收到请无视!");
+					// console.log(key ,"转日期错误：" ,err ,"收到请无视!");
 				}
 			}
+			// console.log(param,'校验');
 			return param;
 		},
 
@@ -962,7 +964,7 @@ export default {
 		 * 提交表单
 		 */
 		submit_main: function submit_main(param, func) {
-			// console.log('提交主要事件', param);
+			// // console.log('提交主要事件', param);
 			var url = this.url;
 			if (url) {
 				if (this.field) {
@@ -983,7 +985,7 @@ export default {
 				url = this.url_submit;
 			} else if (this.field) {
 				var id = param[this.field];
-				// console.log(this.field,id);
+				// // console.log(this.field,id);
 				if (id) {
 					url = this.url_set;
 				} else {
@@ -991,10 +993,10 @@ export default {
 				}
 			}
 
-			// console.log('发送请求前', url);
+			// // console.log('发送请求前', url);
 			if (url) {
 				var _this = this;
-				// console.log('发送信息', url, param);
+				// // console.log('发送信息', url, param);
 				url = this.$toUrl(this.query, url);
 				this.$post(url, param, function(json, status) {
 					if (json.result) {
@@ -1065,7 +1067,7 @@ export default {
 			if (page < 1) {
 				page = 1;
 			} else if (page > this.page_count) {
-				console.log(this.page_count)
+				// console.log(this.page_count)
 				page = this.page_count;
 			}
 			let query = this.query;
@@ -1533,7 +1535,6 @@ export default {
 		 * @param {Object} key
 		 */
 		to_form(url,key){
-			console.log(this.obj, '2131231231231');
 			$.db.set("form",this.obj);
 			this.$router.push(url);
 		},
@@ -1547,7 +1548,7 @@ export default {
 			var json = await this.$get("~/api/sensitive_vocabulary/get_list?");
 			var wordsList = json.result.list
 			var includeWords = []
-			console.log(wordsList)
+			// console.log(wordsList)
 			for (let i = 0; i < wordsList.length; i++) {
 				if(content.indexOf(wordsList[i].sensitive_vocabulary) > -1 ){
 					includeWords.push(wordsList[i].sensitive_vocabulary)
@@ -1566,10 +1567,10 @@ export default {
 		}
 	},
 	created: function created() {
-		console.log("page创建完成时");
+		// console.log("page创建完成时");
 		this.showing = 0;
 		this.check_auth(() => {
-			console.log("获取信息");
+			// console.log("获取信息");
 			this.init(this.$route.query);
 		})
 	},

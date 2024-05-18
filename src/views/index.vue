@@ -351,7 +351,7 @@
 				let token = this.$route.query.token
 				if (token){
 					$.db.set("token",token,120);
-					location.href = "http://localhost:8081/"
+					location.href = "http://localhost:8082/"
 				}
 			},
 					// toggle

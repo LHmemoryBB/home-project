@@ -286,7 +286,7 @@
                     $check_field('add', 'appointment_time'))
                 "
               /> -->
-			  <el-date-picker
+              <el-date-picker
                 v-model="form['appointment_time']"
                 :disabled="disabledObj['appointment_time_isDisabled']"
                 type="datetime"
@@ -397,7 +397,7 @@ export default {
         signIn: true,
         user_group: [],
       },
-	  pickerOptions: {
+      pickerOptions: {
         disabledDate(time) {
           // 获取当前时间
           const now = new Date();
@@ -414,9 +414,7 @@ export default {
           futureSevenDays.setDate(now.getDate() + 7);
 
           // 如果时间在今天之前或未来7天之后，则禁用
-          return (
-            time.getTime() < today.getTime()
-          );
+          return time.getTime() < today.getTime();
         },
       },
       // 查询条件
@@ -490,8 +488,8 @@ export default {
      * @return {String} 验证成功返回null, 失败返回错误提示
      */
     submit_check(param) {
-      if (!param.appointment_time) {
-        return "预约时间不能为空";
+      if (!param.appointment_time || !param.appointment_days || !param.appointment_quantity) {
+        return "请完善信息";
       }
       return null;
     },
@@ -557,8 +555,10 @@ export default {
         console.error(json.error);
       }
     },
-	handleChange(data) {
-      this.form["appointment_time"] = this.$dayJs(data).format("YYYY-MM-DD");
+    handleChange(data) {
+      this.form["appointment_time"] = this.$dayJs(data).format(
+        "YYYY-MM-DD HH:mm:ss"
+      );
     },
     set_appointment_amount() {
       if (this.form.appointment_days && this.form.appointment_quantity) {
@@ -572,9 +572,9 @@ export default {
           this.form.appointment_amount =
             this.form.appointment_amount.toFixed(2);
         }
-      }else{
-		this.form.appointment_amount = ''
-	  }
+      } else {
+        this.form.appointment_amount = "";
+      }
     },
 
     /**

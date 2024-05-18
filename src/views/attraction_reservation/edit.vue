@@ -15,7 +15,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 景点名称: </span>
+              <span>景点名称:</span>
             </div>
             <!-- 文本 -->
             <div class="diy_field diy_text">
@@ -32,9 +32,9 @@
                 "
                 :disabled="disabledObj['attraction_name_isDisabled']"
               />
-              <span v-else-if="$check_field('get', 'attraction_name')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'attraction_name')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -46,7 +46,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 景点城市: </span>
+              <span>景点城市:</span>
             </div>
             <!-- 文本 -->
             <div class="diy_field diy_text">
@@ -63,9 +63,9 @@
                 "
                 :disabled="disabledObj['attraction_cities_isDisabled']"
               />
-              <span v-else-if="$check_field('get', 'attraction_cities')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'attraction_cities')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -77,7 +77,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 景点地址: </span>
+              <span>景点地址:</span>
             </div>
             <!-- 文本 -->
             <div class="diy_field diy_text">
@@ -94,9 +94,9 @@
                 "
                 :disabled="disabledObj['attraction_address_isDisabled']"
               />
-              <span v-else-if="$check_field('get', 'attraction_address')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'attraction_address')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -108,7 +108,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 门票价格: </span>
+              <span>门票价格:</span>
             </div>
             <!-- 数字 -->
             <div class="diy_field diy_number">
@@ -125,9 +125,9 @@
                 "
                 :disabled="disabledObj['admission_price_isDisabled']"
               />
-              <span v-else-if="$check_field('get', 'admission_price')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'admission_price')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -139,7 +139,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 开放时间: </span>
+              <span>开放时间:</span>
             </div>
             <!-- 文本 -->
             <div class="diy_field diy_text">
@@ -156,9 +156,9 @@
                 "
                 :disabled="disabledObj['opening_hours_isDisabled']"
               />
-              <span v-else-if="$check_field('get', 'opening_hours')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'opening_hours')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -170,7 +170,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 预约积分: </span>
+              <span>预约积分:</span>
             </div>
             <!-- 数字 -->
             <div class="diy_field diy_number">
@@ -187,9 +187,9 @@
                 "
                 :disabled="disabledObj['appointment_points_isDisabled']"
               />
-              <span v-else-if="$check_field('get', 'appointment_points')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'appointment_points')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -201,7 +201,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 普通用户: </span>
+              <span>普通用户:</span>
             </div>
             <div class="diy_field diy_down">
               <el-select
@@ -224,9 +224,9 @@
                   <!-- {{ o["nickname"] + "-" + o["username"] }} -->
                 </el-option>
               </el-select>
-              <span v-else-if="$check_field('get', 'regular_users')">{{
-                form["regular_users"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'regular_users')">
+                {{ form["regular_users"] }}
+              </span>
             </div>
           </div>
           <div
@@ -238,7 +238,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 用户姓名: </span>
+              <span>用户姓名:</span>
             </div>
             <!-- 文本 -->
             <div class="diy_field diy_text">
@@ -253,9 +253,9 @@
                 "
                 :disabled="disabledObj['user_name_isDisabled']"
               />
-              <span v-else-if="$check_field('get', 'user_name')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'user_name')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -267,7 +267,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 预约人数: </span>
+              <span>预约人数:</span>
             </div>
             <!-- 数字 -->
             <div class="diy_field diy_number">
@@ -285,9 +285,9 @@
                 :disabled="disabledObj['number_of_reservations_isDisabled']"
                 @input="set_appointment_amount(), set_obtainable_points()"
               />
-              <span v-else-if="$check_field('get', 'number_of_reservations')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'number_of_reservations')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -299,7 +299,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 预约时间: </span>
+              <span>预约时间:</span>
             </div>
             <!-- 日期 -->
             <div class="diy_field diy_date">
@@ -316,8 +316,7 @@
                     $check_field('add', 'appointment_time'))
                 "
                 @change="handleChange"
-              >
-              </el-date-picker>
+              ></el-date-picker>
               <!-- <el-input
                 type="date"
                 :disabled="disabledObj['appointment_time_isDisabled']"
@@ -330,10 +329,10 @@
                   (!form['appointment_time'] &&
                     $check_field('add', 'appointment_time'))
                 "
-              /> -->
-              <span v-else-if="$check_field('get', 'appointment_time')">{{
-                form["${obj.name}"]
-              }}</span>
+              />-->
+              <span v-else-if="$check_field('get', 'appointment_time')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -345,7 +344,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 预约金额: </span>
+              <span>预约金额:</span>
             </div>
             <!-- 文本 -->
             <div class="diy_field diy_text">
@@ -362,9 +361,9 @@
                 "
                 :disabled="true"
               />
-              <span v-else-if="$check_field('get', 'appointment_amount')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'appointment_amount')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
           <div
@@ -376,7 +375,7 @@
             class="form-item col-12 col-md-6"
           >
             <div class="diy_title">
-              <span> 可得积分: </span>
+              <span>可得积分:</span>
             </div>
             <!-- 文本 -->
             <div class="diy_field diy_text">
@@ -393,9 +392,9 @@
                 "
                 :disabled="true"
               />
-              <span v-else-if="$check_field('get', 'obtainable_points')">{{
-                form["${obj.name}"]
-              }}</span>
+              <span v-else-if="$check_field('get', 'obtainable_points')">
+                {{ form["${obj.name}"] }}
+              </span>
             </div>
           </div>
         </div>
@@ -409,25 +408,25 @@
             class="form-item2"
           >
             <div>
-              <span class="text"> 选择预约时间段 </span>
+              <span class="text">选择预约时间段</span>
             </div>
             <!-- 文本 -->
             <div class="display_div">
               <div
-                v-for="(item, index) in timeObj"
+                v-for="(item, index) in attarctionInfo.time_obj"
                 :key="index"
                 :style="{
                   background:
                     activeIndex === index
                       ? '#58b7f2'
-                      : item.syrs > 0
+                      : item.maximum > 0
                       ? '#eaf7ff'
                       : '#f2f2f2',
                 }"
-                @click="changeBack(index, item.syrs)"
+                @click="changeBack(index, item)"
               >
-                <div>时间{{ item.timeSlot }}</div>
-                <div>剩余人数{{ item.syrs }}</div>
+                <div>{{ item.start_time.substring(0,5) }}--{{ item.end_time.substring(0,5) }}</div>
+                <div>可预约人数{{ item.maximum }}</div>
               </div>
             </div>
           </div>
@@ -435,7 +434,9 @@
         <div class="diy_edit_submit_box row">
           <div class="col-12">
             <div class="btn_box">
-              <button class="btn_submit" @click="submit()">提交</button>
+              <button class="btn_submit" @click="submit()" style="color: #fff">
+                提交
+              </button>
             </div>
           </div>
         </div>
@@ -460,6 +461,7 @@ export default {
         signIn: true,
         user_group: [],
       },
+      attarctionInfo: {},
       pickerOptions: {
         disabledDate(time) {
           // 获取当前时间
@@ -485,6 +487,9 @@ export default {
       },
       radio1: "",
       // 查询条件
+      attraction_information_id: localStorage.getItem(
+        "attraction_information_id"
+      ),
       query: {
         attraction_name: "",
         attraction_cities: "",
@@ -517,9 +522,9 @@ export default {
         appointment_amount: "", // 预约金额
         obtainable_points: "", // 可得积分
         attraction_reservation_id: 0,
-        timeObj: {},
+        time_obj: {},
       },
-      activeIndex: "",
+      activeIndex: null,
       // 表单字段
       form: {
         attraction_name: "", // 景点名称
@@ -565,10 +570,35 @@ export default {
      * @return {String} 验证成功返回null, 失败返回错误提示
      */
     submit_check(param) {
-      if (!param.appointment_time) {
-        return "预约时间不能为空";
+      if (!param.appointment_time || !param.number_of_reservations) {
+        return "请完善信息";
       }
+      if (this.activeIndex === null) {
+        return "请选择预约时间";
+      }
+      if (this.form.number_of_reservations > this.attarctionInfo.time_obj[this.activeIndex].maximum) {
+        return "超过预约人数上限，无法预约！"
+      }
+      this.attarctionInfo.time_obj[this.activeIndex].maximum = (
+        this.attarctionInfo.time_obj[this.activeIndex].maximum -
+        this.form.number_of_reservations
+      ).toString();
       return null;
+    },
+
+    submit_after() {
+      this.$post(
+        `~/api/attraction_reservation/updateTime?time_slots_id=${
+          this.attarctionInfo.time_obj[this.activeIndex].time_slots_id
+        }`,
+        this.attarctionInfo.time_obj[this.activeIndex],
+        (res) => {
+          if (res.result == 1) {
+            this.$message.success('提交成功')
+            this.$router.go(-1);
+          }
+        }
+      );
     },
 
     /**
@@ -582,7 +612,6 @@ export default {
       if (json.result && json.result.list) {
         this.list_user_regular_users = json.result.list;
       } else if (json.error) {
-        console.error(json.error);
       }
     },
     async get_user_session_regular_users() {
@@ -629,23 +658,20 @@ export default {
           );
         }
       } else if (json.error) {
-        console.error(json.error);
       }
     },
 
     set_appointment_amount() {
-      console.log(this.form, "asdasdsa");
+      if (this.attarctionInfo.time_obj.length === 0) {
+        this.$message.warning("未设置可预约时间，无法预约，请联系管理员！");
+        this.form.number_of_reservations = "";
+        return false;
+      }
       this.form.appointment_amount =
         parseFloat(this.form.admission_price) *
         parseFloat(this.form.number_of_reservations);
 
       let r = /^\+?[1-9][0-9]*$/; // 正整数
-      console.log(
-        !r.test(this.form.appointment_amount),
-        this.form.number_of_reservations,
-        this.form.appointment_amount,
-        "number_of_reservations"
-      );
       if (this.form.number_of_reservations) {
         this.form.appointment_amount = this.form.appointment_amount.toFixed(2);
       } else {
@@ -743,10 +769,10 @@ export default {
       $.db.del("form");
       return param;
     },
-    changeBack(index, syrs) {
-      if (syrs === 0) {
-        this.$message('预约人数已达上限')
-        return false
+    changeBack(index, item) {
+      if (item.maximum === 0) {
+        this.$message("预约人数已达上限");
+        return false;
       }
       this.activeIndex = index;
     },
@@ -774,15 +800,22 @@ export default {
       }
     },
   },
-  computed: {
-    timeObj() {
-      if (this.form["time_obj"]) {
-        const arr = JSON.parse(this.form.time_obj).timeSlots;
-        arr.forEach((element) => {
-          element.syrs = element.maxPeople - Math.floor(Math.random() * (element.maxPeople - 1)) + 1;;
-        });
-        return arr;
-      }
+  watch: {
+    attraction_information_id: {
+      handler() {
+        if (this.attraction_information_id) {
+          this.$get(
+            `~/api/attraction_information/get_obj?`,
+            { attraction_information_id: this.attraction_information_id },
+            (res) => {
+              console.log(res);
+              this.attarctionInfo = res.result.obj;
+            }
+          );
+        }
+      },
+      immediate: true,
+      deep: true,
     },
   },
   created() {

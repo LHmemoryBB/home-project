@@ -473,8 +473,10 @@ export default {
   watch: {
     obj: {
       deep: true,
+      immediate: true,
       handler() {
         this.praiseLen = this.obj["praise_len"];
+        localStorage.setItem("attraction_information_id", this.obj.attraction_information_id)
       },
     },
   },

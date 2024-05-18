@@ -784,7 +784,7 @@ export default {
 		 * @param {Object} func 返回函数
 		 */
 		submit: function submit(param, func) {
-			console.log('提交事件');
+			console.log('提交事件',param);
 			if (!param) {
 				param = this.form;
 			}
