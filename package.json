@@ -19,9 +19,11 @@
     "vue": "^2.6.14",
     "vue-json-excel": "^0.3.0",
     "vue-piczoom": "^1.0.6",
+    "vue-qrcode": "^2.2.2",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.2.0",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "qrcodejs2": "^0.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

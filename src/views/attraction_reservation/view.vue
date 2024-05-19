@@ -1,49 +1,48 @@
-<template>
-	<div class="page_user" id="user_address">
-		<div class="warp">
-			<div class="container">
-				<div class="row justify-content-between">
-					<div class="col-12 col-md-3">
-						<div class="card_menu">
-							<!-- 左侧边栏 -->
-							<list_admin_menu_user></list_admin_menu_user>
-						</div>
-					</div>
-					<div class="col-12 col-md-9">
-						<div class="card_addres pl-2">
-							<!-- 景点预约 -->
-							<div><span>景点预约</span></div>
-							<view_attraction_reservation v-if="$check_action('/attraction_reservation/view','get')"></view_attraction_reservation>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+ <template>
+  <div class="page_user" id="user_address">
+    <div class="warp">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-12 col-md-3">
+            <div class="card_menu">
+              <!-- 左侧边栏 -->
+              <list_admin_menu_user></list_admin_menu_user>
+            </div>
+          </div>
+          <div class="col-12 col-md-9">
+            <div class="card_addres pl-2">
+              <!-- 景点预约 -->
+              <div><span>景点预约</span></div>
+              <view_attraction_reservation
+                v-if="$check_action('/attraction_reservation/view', 'get')"
+              ></view_attraction_reservation>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 
 <script>
-	import list_admin_menu_user from "@/components/diy/list_admin_menu_user.vue";
-	import view_attraction_reservation from "../../components/diy/view_attraction_reservation.vue";
-	export default {
-		data() {
-			return {
-			};
-		},
-		mounted() {
-		},
-		methods: {
-		},
-		components: {
-			list_admin_menu_user,
-			view_attraction_reservation,
-		},
-	};
+import list_admin_menu_user from "@/components/diy/list_admin_menu_user.vue";
+import view_attraction_reservation from "../../components/diy/view_attraction_reservation.vue";
+export default {
+  data() {
+    return {};
+  },
+  mounted() {},
+  methods: {},
+  components: {
+    list_admin_menu_user,
+    view_attraction_reservation,
+  },
+};
 </script>
 
 <style scoped>
-	.container {
-		min-height: 800px;
-	}
+.container {
+  min-height: 800px;
+}
 </style>

@@ -543,6 +543,7 @@ export default {
         obtainable_points: "", // 可得积分
         attraction_reservation_id: 0,
         time_obj: {},
+        time_period:''
       },
       disabledObj: {
         attraction_name_isDisabled: false,
@@ -579,6 +580,7 @@ export default {
       if (this.form.number_of_reservations > this.attarctionInfo.time_obj[this.activeIndex].maximum) {
         return "超过预约人数上限，无法预约！"
       }
+      param.time_period = `${this.attarctionInfo.time_obj[this.activeIndex].start_time}-${this.attarctionInfo.time_obj[this.activeIndex].end_time}`
       this.attarctionInfo.time_obj[this.activeIndex].maximum = (
         this.attarctionInfo.time_obj[this.activeIndex].maximum -
         this.form.number_of_reservations
